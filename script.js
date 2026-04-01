@@ -2,22 +2,22 @@ const stages = [
   {
     title: "1단계",
     img: "img2.jpg",
-    answer: { x: 0.4, y: 0.3 }
+    answer: { x: 0.5, y: 0.5 }
   },
   {
     title: "2단계",
     img: "img3.jpg",
-    answer: { x: 0.6, y: 0.5 }
+    answer: { x: 0.5, y: 0.5 }
   },
   {
     title: "3단계",
     img: "img4.jpg",
-    answer: { x: 0.3, y: 0.7 }
+    answer: { x: 0.5, y: 0.5 }
   },
   {
     title: "4단계",
     img: "img5.jpg",
-    answer: { x: 0.7, y: 0.4 }
+    answer: { x: 0.5, y: 0.5 }
   }
 ];
 
