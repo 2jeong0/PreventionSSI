@@ -62,11 +62,39 @@ document.getElementById("game-img").addEventListener("click", function (e) {
       if (currentStage < stages.length) {
         loadStage();
       } else {
-        document.getElementById("result").innerText = "완료!";
+        showEndMessage();
       }
-    }, 1000);
 
   } else {
     document.getElementById("result").innerText = "다시 시도!";
   }
 });
+
+// 뒤로가기 앞으로가기
+function nextStage() {
+  currentStage++;
+  if (currentStage >= stages.length) {
+    showEndMessage();
+  } else {
+    loadStage();
+  }
+}
+
+function prevStage() {
+  if (currentStage > 0) {
+    currentStage--;
+    loadStage();
+  }
+}
+
+// 마지막화면 메시지
+function showEndMessage() {
+  document.getElementById("stage-title").innerText = "완료!";
+  document.getElementById("game-img").style.display = "none";
+
+  document.getElementById("result").innerText =
+    "휴게실에서 성함과 번호를 알려주시고, 선물을 받아가세요 ^^";
+}
+
+// 저장
+const SCRIPT_URL = "AKfycbwCRnd0UsR6M688gi42j-1VGuZLkxMWOzQqL2k8S5hW-4_E1MrbaVy0YkkhoAu44f2e";
