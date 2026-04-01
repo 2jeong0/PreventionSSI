@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>틀린그림 찾기</title>
+  <title>숨은그림찾기</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 
 <!-- 시작 화면 -->
 <div id="start-screen">
   <div class="input-card">
-    <h2>이름과 고유번호 입력</h2>
+    <h2>이름과 번호를 입력하세요</h2>
     <input type="text" id="name" placeholder="이름">
-    <input type="text" id="id" placeholder="고유번호">
+    <input type="text" id="id" placeholder="번호 4자리">
     <button onclick="startGame()">시작하기</button>
   </div>
 </div>
@@ -23,28 +22,30 @@
 <div id="game-screen" style="display:none;">
   <h2 id="stage-title"></h2>
 
-  <div class="image-box">
-    <img id="game-img" src="">
-    <div class="marker" id="marker"></div>
+  <div class="game-container">
+    <div class="image-box">
+      <img id="game-img" src="">
+      <div id="marker" class="marker"></div>
+    </div>
   </div>
 
-<div id="end-card" style="display:none;">
-  <div class="end-box">
-    <p>
-      휴게실에서 성함과 번호를 알려주시고,<br>
-      선물을 받아가세요 ^^
-    </p>
-  </div>
-</div>
-
-  
-<div id="nav-buttons">
-  <button onclick="prevStage()">⬅ 이전</button>
-  <button onclick="nextStage()">다음 ➡</button>
-</div>
-
-  
   <p id="result"></p>
+
+  <!-- 버튼 -->
+  <div class="nav-buttons">
+    <button onclick="prevStage()">이전</button>
+    <button onclick="nextStage()">다음</button>
+  </div>
+
+  <!-- 종료 카드 -->
+  <div id="end-card">
+    <div class="end-box">
+      <p>
+        휴게실에서 성함과 번호를 알려주시고,<br>
+        선물을 받아가세요 ^^
+      </p>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
