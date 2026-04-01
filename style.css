@@ -59,16 +59,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .image-box {
   position: relative;
+  width: 48vw;   /* 👉 화면 절반씩 */
 }
 
 .image-box img {
-  width: 42vw;
-  max-width: 350px;
+  width: 100%;   /* 👉 부모 기준 꽉 채움 */
+  height: auto;
+  display: block;
 }
 
 /* 정답 표시 */
