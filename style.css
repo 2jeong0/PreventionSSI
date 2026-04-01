@@ -1,38 +1,13 @@
+/* 전체 배경 */
 body {
-  text-align: center;
-  font-family: sans-serif;
+  margin: 0;
+  background: url('img1.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
-.game-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.image-box {
-  position: relative;
-}
-
-img {
-  width: 300px;
-  cursor: pointer;
-}
-
-.marker {
-  position: absolute;
-  border: 3px solid red;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  pointer-events: none;
-}
-
-/* 시작 화면 배경 */
+/* 시작 화면 */
 #start-screen {
   height: 100vh;
-  background: url('img1.jpg') no-repeat center center;
-  background-size: cover;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,41 +17,71 @@ img {
   background: rgba(255, 255, 255, 0.9);
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   text-align: center;
   width: 85%;
   max-width: 350px;
 
   display: flex;
-  flex-direction: column;   /* 👉 세로 정렬 */
+  flex-direction: column;
   align-items: center;
 }
 
-.input-card h2 {
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
 .input-card input {
-  width: 260px;        /* 기존보다 크게 */
+  width: 260px;
   padding: 14px;
   margin: 10px 0;
   border-radius: 12px;
-  border: 1px solid #ccc;
-  font-size: 18px;     /* 👉 글자 크게 */
+  font-size: 18px;
 }
 
 .input-card button {
   margin-top: 20px;
-  padding: 14px 24px;
-  border: none;
+  padding: 14px;
   border-radius: 25px;
-  background-color: #ff7eb3;
+  background: #ff7eb3;
   color: white;
-  font-size: 18px;   /* 👉 글자 크게 */
-  cursor: pointer;
+  font-size: 18px;
 }
 
-.input-card button:hover {
-  background-color: #ff5c9d;
+/* 게임 화면 */
+#game-screen {
+  text-align: center;
+  padding: 10px;
+}
+
+#stage-title {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* 이미지 */
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-box {
+  position: relative;
+}
+
+.image-box img {
+  width: 42vw;
+  max-width: 350px;
+}
+
+/* 정답 표시 */
+.marker {
+  position: absolute;
+  border: 3px solid red;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+#result {
+  color: white;
+  font-size: 18px;
 }
