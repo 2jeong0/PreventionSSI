@@ -3,10 +3,10 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbya4Awv4ovMv0KmZaoYO
 
 // 스테이지
 const stages = [
-  { title: "1단계", img: "img2.jpg", answer: { x: 0.5, y: 0.5 } },
-  { title: "2단계", img: "img3.jpg", answer: { x: 0.5, y: 0.5 } },
-  { title: "3단계", img: "img4.jpg", answer: { x: 0.5, y: 0.5 } },
-  { title: "4단계", img: "img5.jpg", answer: { x: 0.5, y: 0.5 } }
+  { title: "1단계: 가운데 별 클릭", img: "img2.jpg", answer: { x: 0.5, y: 0.5 } },
+  { title: "2단계: 대충 가운데 클릭", img: "img3.jpg", answer: { x: 0.5, y: 0.5 } },
+  { title: "3단계: 대충 가운데 클릭", img: "img4.jpg", answer: { x: 0.5, y: 0.5 } },
+  { title: "4단계: 대충 가운데 클릭", img: "img5.jpg", answer: { x: 0.5, y: 0.5 } }
 ];
 
 let currentStage = 0;
@@ -23,8 +23,11 @@ function startGame() {
 
   fetch(SCRIPT_URL, {
     method: "POST",
-    body: JSON.stringify({ name, id })
-  }).catch(() => {});
+    body: JSON.stringify({
+      name: name,
+      id: id
+      })
+      });
 
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("game-screen").style.display = "block";
