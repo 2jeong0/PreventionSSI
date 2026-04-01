@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-box {
+  position: relative;
+}
+
+img {
+  width: 300px;
+  cursor: pointer;
+}
+
+.marker {
+  position: absolute;
+  border: 3px solid red;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
