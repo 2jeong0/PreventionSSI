@@ -81,3 +81,19 @@ body {
   color: white;
   font-size: 18px;
 }
+
+
+/*뒤로가기/앞으로가기 버튼*/
+#nav-buttons {
+  margin-top: 15px;
+}
+
+#nav-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  border: none;
+  background: #6c9cff;
+  color: white;
+  font-size: 16px;
+}
