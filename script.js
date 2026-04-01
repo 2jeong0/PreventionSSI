@@ -2,22 +2,22 @@ const stages = [
   {
     title: "1단계",
     img: "img2.jpg",
-    answer: { x: 50, y: 60 }
+    answer: { x: 0.5, y: 0.5 }
   },
   {
     title: "2단계",
     img: "img3.jpg",
-    answer: { x: 120, y: 80 }
+    answer: { x: 0.5, y: 0.5 }
   },
   {
     title: "3단계",
     img: "img4.jpg",
-    answer: { x: 90, y: 150 }
+    answer: { x: 0.5, y: 0.5 }
   },
   {
     title: "4단계",
     img: "img5.jpg",
-    answer: { x: 200, y: 120 }
+    answer: { x: 0.5, y: 0.5 }
   }
 ];
 
@@ -42,17 +42,17 @@ function loadStage() {
 document.querySelectorAll(".image-box").forEach((box, index) => {
   box.addEventListener("click", function (e) {
     const rect = box.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
 
     const answer = stages[currentStage].answer;
 
-    if (Math.abs(x - answer.x) < 30 && Math.abs(y - answer.y) < 30) {
+   if (Math.abs(x - answer.x) < 0.05 && Math.abs(y - answer.y) < 0.05) {
       document.getElementById("result").innerText = "정답입니다!";
 
       const marker = document.getElementById("marker" + (index + 1));
-      marker.style.left = (answer.x - 15) + "px";
-      marker.style.top = (answer.y - 15) + "px";
+      marker.style.left = (answer.x * rect.width - 15) + "px";
+      marker.style.top = (answer.y * rect.height - 15) + "px";
       marker.style.display = "block";
 
       setTimeout(() => {
