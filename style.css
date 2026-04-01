@@ -37,3 +37,39 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+.input-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.input-card h2 {
+  margin-bottom: 20px;
+}
+
+.input-card input {
+  width: 200px;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.input-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff7eb3;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-card button:hover {
+  background-color: #ff5c9d;
+}
