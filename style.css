@@ -3,6 +3,7 @@ body {
   margin: 0;
   background: url('img1.jpg') no-repeat center center fixed;
   background-size: cover;
+  font-family: sans-serif;
 }
 
 /* 시작 화면 */
@@ -14,29 +15,27 @@ body {
 }
 
 .input-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.9);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
   width: 85%;
   max-width: 350px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .input-card input {
-  width: 260px;
+  width: 100%;
   padding: 14px;
   margin: 10px 0;
-  border-radius: 12px;
   font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
 }
 
 .input-card button {
-  margin-top: 20px;
   padding: 14px;
+  width: 100%;
+  border: none;
   border-radius: 25px;
   background: #ff7eb3;
   color: white;
@@ -49,51 +48,67 @@ body {
   padding: 10px;
 }
 
-#stage-title {
-  color: white;
-  font-size: 20px;
+/* 이미지 크게 */
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 👉 이미지 1개 크게 */
 .image-box {
   position: relative;
-  width: 95vw;   /* 거의 전체 화면 */
-  margin: auto;
+  width: 90vw;
+  max-width: 500px;
 }
 
 .image-box img {
   width: 100%;
   height: auto;
-  display: block;
 }
 
 /* 정답 표시 */
 .marker {
   position: absolute;
-  border: 4px solid red;
+  border: 3px solid red;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   display: none;
 }
 
-#result {
-  color: white;
-  font-size: 18px;
-}
-
-
-/*뒤로가기/앞으로가기 버튼*/
-#nav-buttons {
+/* 버튼 */
+.nav-buttons {
   margin-top: 15px;
 }
 
-#nav-buttons button {
+.nav-buttons button {
   padding: 10px 20px;
   margin: 5px;
-  border-radius: 20px;
+  border-radius: 15px;
   border: none;
-  background: #6c9cff;
+  background: #6ec6ff;
   color: white;
   font-size: 16px;
+}
+
+/* 종료 카드 */
+#end-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+}
+
+.end-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
 }
