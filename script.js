@@ -1,4 +1,4 @@
-// 🔥 GAS URL (반드시 전체 URL!)
+// 🔥 GAS URL
 const SCRIPT_URL = "https://script.google.com/macros/s/여기에전체URL/exec";
 
 // 스테이지
@@ -21,7 +21,6 @@ function startGame() {
     return;
   }
 
-  // 👉 저장 (에러 나도 게임은 진행되게)
   fetch(SCRIPT_URL, {
     method: "POST",
     body: JSON.stringify({ name, id })
@@ -40,43 +39,46 @@ function loadStage() {
   document.getElementById("stage-title").innerText = stage.title;
   document.getElementById("game-img").src = stage.img;
   document.getElementById("result").innerText = "";
+
   document.getElementById("marker").style.display = "none";
   document.getElementById("game-img").style.display = "block";
+  document.getElementById("end-card").style.display = "none";
 }
 
-// 이미지 클릭
-document.getElementById("game-img").addEventListener("click", function (e) {
-  const rect = this.getBoundingClientRect();
+// 클릭 이벤트
+window.onload = function () {
+  document.getElementById("game-img").addEventListener("click", function (e) {
+    const rect = this.getBoundingClientRect();
 
-  const x = (e.clientX - rect.left) / rect.width;
-  const y = (e.clientY - rect.top) / rect.height;
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
 
-  const answer = stages[currentStage].answer;
+    const answer = stages[currentStage].answer;
 
-  if (Math.abs(x - answer.x) < 0.05 && Math.abs(y - answer.y) < 0.05) {
-    document.getElementById("result").innerText = "정답입니다!";
+    if (Math.abs(x - answer.x) < 0.05 && Math.abs(y - answer.y) < 0.05) {
+      document.getElementById("result").innerText = "정답입니다!";
 
-    const marker = document.getElementById("marker");
+      const marker = document.getElementById("marker");
+      marker.style.left = (answer.x * rect.width - 20) + "px";
+      marker.style.top = (answer.y * rect.height - 20) + "px";
+      marker.style.display = "block";
 
-    marker.style.left = (answer.x * rect.width - 20) + "px";
-    marker.style.top = (answer.y * rect.height - 20) + "px";
-    marker.style.display = "block";
+      setTimeout(() => {
+        currentStage++;
+        if (currentStage < stages.length) {
+          loadStage();
+        } else {
+          showEndMessage();
+        }
+      }, 1000);
 
-    setTimeout(() => {
-      currentStage++;
-      if (currentStage < stages.length) {
-        loadStage();
-      } else {
-        showEndMessage();
-      }
-    }, 1000);  // 🔥 빠진 괄호 수정됨
+    } else {
+      document.getElementById("result").innerText = "다시 시도!";
+    }
+  });
+};
 
-  } else {
-    document.getElementById("result").innerText = "다시 시도!";
-  }
-});
-
-// 이전 / 다음
+// 다음 / 이전
 function nextStage() {
   currentStage++;
   if (currentStage >= stages.length) {
@@ -93,10 +95,10 @@ function prevStage() {
   }
 }
 
-// 종료 화면
+// 종료
 function showEndMessage() {
   document.getElementById("stage-title").innerText = "완료!";
   document.getElementById("game-img").style.display = "none";
-  document.getElementById("result").innerText =
-    "휴게실에서 성함과 번호를 알려주시고, 선물을 받아가세요 ^^";
+  document.getElementById("marker").style.display = "none";
+  document.getElementById("end-card").style.display = "flex";
 }
