@@ -24,8 +24,25 @@ const stages = [
 let currentStage = 0;
 
 function startGame() {
+  const name = document.getElementById("name").value;
+  const id = document.getElementById("id").value;
+
+  // 👉 입력값 확인 (선택)
+  if (!name || !id) {
+    alert("이름과 번호를 입력해주세요!");
+    return;
+  }
+
+  // 👉 구글 스프레드시트로 전송
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: JSON.stringify({ name, id })
+  });
+
+  // 👉 화면 전환
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("game-screen").style.display = "block";
+
   loadStage();
 }
 
