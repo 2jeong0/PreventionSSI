@@ -40,3 +40,19 @@ function drawCircle(x, y) {
 
   document.querySelector(".image-box:nth-child(2)").appendChild(circle);
 }
+
+function startGame() {
+  const name = document.getElementById("name").value;
+  const id = document.getElementById("id").value;
+
+  if (name === "" || id === "") {
+    alert("이름과 고유번호를 입력하세요!");
+    return;
+  }
+
+  // 입력 화면 숨기기
+  document.getElementById("start-screen").style.display = "none";
+
+  // 게임 화면 보이기
+  document.getElementById("game-screen").style.display = "block";
+}
