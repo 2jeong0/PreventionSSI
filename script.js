@@ -1,5 +1,5 @@
 // 🔥 GAS URL
-const SCRIPT_URL = "https://script.google.com/macros/s/여기에전체URL/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/https://docs.google.com/spreadsheets/d/1IzHobxDGIjmvce2qLSbw9glC8VCHyWnAgUgS1AUbZn4/edit?gid=1042940834#gid=1042940834/exec";
 
 // 스테이지
 const stages = [
