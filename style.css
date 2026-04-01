@@ -44,29 +44,34 @@ img {
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   text-align: center;
+
+  display: flex;
+  flex-direction: column;   /* 👉 세로 정렬 */
+  align-items: center;
 }
 
 .input-card h2 {
   margin-bottom: 20px;
+  font-size: 22px;
 }
 
 .input-card input {
-  width: 200px;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 10px;
+  width: 260px;        /* 기존보다 크게 */
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 12px;
   border: 1px solid #ccc;
-  font-size: 14px;
+  font-size: 18px;     /* 👉 글자 크게 */
 }
 
 .input-card button {
-  margin-top: 15px;
-  padding: 10px 20px;
+  margin-top: 20px;
+  padding: 14px 24px;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   background-color: #ff7eb3;
   color: white;
-  font-size: 16px;
+  font-size: 18px;   /* 👉 글자 크게 */
   cursor: pointer;
 }
 
