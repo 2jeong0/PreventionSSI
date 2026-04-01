@@ -2,43 +2,40 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>틀린그림 찾기</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<!-- ✅ 1. 시작 화면 -->
+<!-- 시작 화면 -->
 <div id="start-screen">
   <div class="input-card">
-    <h2>✨ 틀린그림 찾기 ✨</h2>
-
-    <input type="text" id="name" placeholder="이름 입력">
-    <input type="text" id="id" placeholder="고유번호 입력">
-
-    <button onclick="startGame()">시작하기 🎮</button>
+    <h2>이름과 고유번호 입력</h2>
+    <input type="text" id="name" placeholder="이름">
+    <input type="text" id="id" placeholder="고유번호">
+    <button onclick="startGame()">시작하기</button>
   </div>
 </div>
 
-
-<!-- ✅ 2. 게임 화면 (처음엔 숨김) -->
+<!-- 게임 화면 -->
 <div id="game-screen" style="display:none;">
-
-  <h2 id="stage-title">틀린그림 찾기 1</h2>
+  <h2 id="stage-title"></h2>
 
   <div class="game-container">
     <div class="image-box">
-      <img src="img1.jpg">
+      <img id="img1" src="">
+      <div class="marker" id="marker1"></div>
     </div>
     <div class="image-box">
-      <img id="game-img">
+      <img id="img2" src="">
+      <div class="marker" id="marker2"></div>
     </div>
   </div>
 
-  <p id="result">문제를 풀어보세요!</p>
-
+  <p id="result"></p>
 </div>
-<script src="script.js"></script>
 
+<script src="script.js"></script>
 </body>
 </html>
